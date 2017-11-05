@@ -1,0 +1,109 @@
+# REGION : KR, since Elin Gunner patch
+# count characters
+# offset characters
+# - offset offset (currentOffset)
+# - offset nextOffset
+# - uint16 # 0?
+# - uint16 # 0?
+# - offset name
+# - offset guildName
+# - count details
+# - offset details
+# - count shape
+# - offset shape
+
+bool   veteran
+uint32 gameTimeRemaining # old P2P content, values below 60 don't display anything
+uint32 maxCharacters
+int32  updateMode # 0 = add/update users*, 1 = replace entire list
+                  # *shows server transfer character deletion screen if the first packet sent since client startup is type 0
+bool   unk1 # if this is true, the client calls OnGame_SelectCharacter_SetAchievment(0, 0)
+bool   unk2 # show date in character deletion screen
+int32  unk3 # ^ date related
+int32  unk4 # ^
+int32  unk5 # ^
+
+array  characters
+- uint32 id
+- uint32 gender # 1 = female, 2 = male
+- uint32 race # 0..5
+- uint32 class # 0..12
+- uint32 level
+- int32  currentHp
+- int32  unk6 # 0?
+- int32  currentMp
+- uint32 worldMapWorldId
+- uint32 worldMapGuardId
+- uint32 areaNameId
+- int64  lastOnline # unix
+- bool   deletion
+- int64  deleteDate
+- int32  deleteSecRemaining
+- uint32 weapon # item ids
+- uint32 earring1
+- uint32 earring2
+- uint32 chest
+- uint32 gloves
+- uint32 boots
+- int32  unk7
+- uint32 ring1
+- uint32 ring2
+- uint32 innerwear
+- uint32 head
+- uint32 face
+- uint64 appearance # TODO 8 byte buffer
+- bool   unk8
+- int32  adminLevel # >0 = [GM] tag added to name
+- bool   banned
+- int64  banExpiryDate
+- int32  banSecRemaining # -1 = Permanent
+- int32  needsNameChange
+- int32  weaponModel
+- int32  unk9
+- int32  unk10
+- int32  chestModel
+- int32  glovesModel
+- int32  bootsModel
+- int32  unk11
+- int32  unk12
+- int32  unk13
+- int32  unk14
+- int32  unk15
+- int32  unk16
+- uint32 weaponDye
+- uint32 chestDye
+- uint32 glovesDye
+- uint32 bootsDye
+- int32  unk17
+- int32  unk18
+- int32  unk19
+- uint32 underwearDye
+- uint32 costumeBackDye
+- uint32 costumeHeadDye
+- uint32 costumeFaceDye
+- uint32 hairAdornment # item ids
+- uint32 mask
+- uint32 back
+- uint32 weaponSkin
+- uint32 costume
+- uint32 unk20 # 0x3fffffff
+- uint32 costumeDye
+- int32  weaponEnchantment
+- int32  curRestedXp
+- int32  maxRestedXp
+- bool   showFaceCostume
+- int32  unk21 # 0?
+- byte   unk22 # 0?
+- bool   showCostume
+- int32  unk23 # 100?
+- int32  achievementPoints # doesen't match ingame points though
+- int32  laurel # -1..5 (none, none, bronze, silver, gold, diamond, champion)
+- int32  position # 1..characterCount (position in character selection screen)
+- int32  guildId
+- array  customStrings
+- - int32 itemId
+- - string value
+- string name
+- bytes  details
+- bytes  shape
+- string guildName
