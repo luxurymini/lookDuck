@@ -6,8 +6,10 @@
 	***
 	K-TERA 17-11-06 version
 		S_USER_EXTERNAL_CHANGE.2.def
+			unk5 : may be 스템프?
 		S_GET_USER_LIST.6.def
 	***
+
 */
 const path = require('path');
 const fs = require('fs');
@@ -144,7 +146,7 @@ module.exports = function lookDuck(dispatch) {
 	// 외형 변경시
 	async function changeExternal(event) {
 		const newEvent = Object.assign({}, me.defaultLook, event);
-		console.log(newEvent);
+		// console.log(newEvent);
 		dispatch.toClient('S_USER_EXTERNAL_CHANGE', '*', newEvent);
 		await presetSave();
 	}
