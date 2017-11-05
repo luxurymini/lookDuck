@@ -96,6 +96,7 @@ module.exports = function lookDuck(dispatch) {
 	function chatCmd(order, number) {
 		switch (order) {
 			case '옷':
+			case '등':
 			case '무기':
 			case '머리':
 			case '날개':
