@@ -73,7 +73,7 @@ module.exports = function lookDuck(dispatch) {
 			dispatch.toClient('S_USER_EXTERNAL_CHANGE', '*', newEvent);
 		}
 
-		// 이것 없으면 클라이언트 계쏙 튕김 블럭당할수도 있음.
+		// 이것 없으면 클라이언트 계쏙 튕김
 		return false;
 	});
 
@@ -145,7 +145,7 @@ module.exports = function lookDuck(dispatch) {
 	// 외형 변경시
 	async function changeExternal(event) {
 		const newEvent = Object.assign({}, me.defaultLook, event);
-		// console.log(newEvent);
+		console.log(newEvent);
 		dispatch.toClient('S_USER_EXTERNAL_CHANGE', '*', newEvent);
 		await presetSave();
 	}
