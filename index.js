@@ -101,7 +101,6 @@ module.exports = function lookDuck(dispatch) {
 			case '등':
 			case '무기':
 			case '머리':
-			case '날개':
 			case '얼굴':
 				if (!number) break;
 				presets[me.playerId] = Object.assign({}, presets[me.playerId]);
